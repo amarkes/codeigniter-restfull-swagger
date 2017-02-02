@@ -1,0 +1,115 @@
+{
+    "basePath": "http://localhost/avulso/ci-3-restfull-swagger/api/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.2",
+    "resourcePath": "/lista",
+    "apis": [
+        {
+            "path": "lista",
+            "description": "get",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "get lista",
+                    "nickname": "helloWord",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "id",
+                            "type": "string",
+                            "required": false,
+                            "description": "id table"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "fornecedor_id",
+                            "type": "string",
+                            "required": false,
+                            "description": "id do fornecedor"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "status",
+                            "type": "string",
+                            "required": false,
+                            "description": "status A - B - I"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "Invalid username"
+                        },
+                        {
+                            "code": 404,
+                            "message": "Not found"
+                        }
+                    ],
+                    "notes": "Returns a string"
+                },
+                {
+                    "method": "post",
+                    "summary": "get lista",
+                    "nickname": "helloWord",
+                    "parameters": [
+                        {
+                            "paramType": "body",
+                            "name": "body",
+                            "type": "Lista",
+                            "required": false,
+                            "description": "id table"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "Invalid username"
+                        },
+                        {
+                            "code": 404,
+                            "message": "Not found"
+                        }
+                    ],
+                    "notes": "Returns a string"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "Lista": {
+            "id": "Lista",
+            "required": [
+                "fornecedor_id",
+                "nome",
+                "status"
+            ],
+            "properties": {
+                "fornecedor_id": {
+                    "type": "integer"
+                },
+                "nome": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Tag"
+                    }
+                },
+                "valor": {
+                    "type": "string",
+                    "enum": [
+                        "available",
+                        "pending",
+                        "sold"
+                    ]
+                },
+                "status": {
+                    "description": "[A]tivo, [I]nativo, [B]loqueado",
+                    "type": "string",
+                    "format": "int64"
+                }
+            }
+        }
+    },
+    "produces": [
+        "application/json"
+    ]
+}
