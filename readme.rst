@@ -55,7 +55,7 @@ Insert in file controller
      *  apiVersion="0.2",
      *  swaggerVersion="1.2",
      *  resourcePath="/lista",
-     *  basePath="http://localhost/avulso/ci-3-restfull-swagger/api/",
+     *  basePath="YOU-URL-HERE/api/",
      *  produces="['application/json']",
      * )
      */
